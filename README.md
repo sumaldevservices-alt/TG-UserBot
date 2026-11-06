@@ -1,11 +1,15 @@
 <div align="center">
 
 <!-- ═══════════════ ANIMATED HEADER ═══════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=12,20,24,30&height=260&section=header&text=TG-USERBOT-PRO&fontSize=70&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=62&descSize=18" alt="TG-USERBOT-PRO" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0f0c29,50:302b63,100:24243e&height=260&section=header&text=TG-USERBOT-PRO&fontSize=70&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=62&descSize=18" alt="TG-USERBOT-PRO" width="100%"/>
 
 <!-- ═══════════════ TYPING ANIMATION ═══════════════ -->
 <a href="https://github.com/sumaldevservices-alt/TG-UserBot">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=00D2FF&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users" alt="Typing SVG" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=00D2FF&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=0369A1&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=0369A1&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users" alt="Typing SVG" />
+  </picture>
 </a>
 
 <br/>
@@ -28,15 +32,15 @@
 <br/><br/>
 
 <!-- ═══════════════ NAV BUTTONS ═══════════════ -->
-<a href="#-quick-start"><img src="https://img.shields.io/badge/⚡_QUICK_START-00D2FF?style=for-the-badge&labelColor=0d1117" alt="Quick Start"/></a>
-<a href="#-architecture"><img src="https://img.shields.io/badge/🏛️_ARCHITECTURE-9b5de5?style=for-the-badge&labelColor=0d1117" alt="Architecture"/></a>
-<a href="#-command-catalog"><img src="https://img.shields.io/badge/📚_COMMANDS-f15bb5?style=for-the-badge&labelColor=0d1117" alt="Commands"/></a>
-<a href="#-deployment-matrix"><img src="https://img.shields.io/badge/🚢_DEPLOY-fee440?style=for-the-badge&labelColor=0d1117" alt="Deploy"/></a>
-<a href="#-security--responsible-use"><img src="https://img.shields.io/badge/🔐_SECURITY-06d6a0?style=for-the-badge&labelColor=0d1117" alt="Security"/></a>
+<a href="#-quick-start"><img src="https://img.shields.io/badge/⚡_QUICK_START-0284c7?style=for-the-badge&labelColor=0d1117" alt="Quick Start"/></a>
+<a href="#-architecture"><img src="https://img.shields.io/badge/🏛️_ARCHITECTURE-7c3aed?style=for-the-badge&labelColor=0d1117" alt="Architecture"/></a>
+<a href="#-command-catalog"><img src="https://img.shields.io/badge/📚_COMMANDS-db2777?style=for-the-badge&labelColor=0d1117" alt="Commands"/></a>
+<a href="#-deployment-matrix"><img src="https://img.shields.io/badge/🚢_DEPLOY-d97706?style=for-the-badge&labelColor=0d1117" alt="Deploy"/></a>
+<a href="#-security--responsible-use"><img src="https://img.shields.io/badge/🔐_SECURITY-059669?style=for-the-badge&labelColor=0d1117" alt="Security"/></a>
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24,30&height=3&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00d2ff,50:9b5de5,100:f15bb5&height=3&section=header" width="100%"/>
 
 ## 📑 Table of Contents
 
@@ -148,10 +152,10 @@ flowchart TD
         C5["Profile (.copy, .normal)"]
     end
 
-    style TG fill:#0088cc,stroke:#fff,color:#fff
-    style DISP fill:#1a1a2e,stroke:#00d2ff,color:#fff
-    style AUTO fill:#16213e,stroke:#9b5de5,color:#fff
-    style REG fill:#16213e,stroke:#f15bb5,color:#fff
+    style TG fill:#0088cc,stroke:#0088cc,color:#fff
+    style DISP fill:transparent,stroke:#0ea5e9,stroke-width:2px
+    style AUTO fill:transparent,stroke:#8b5cf6,stroke-width:2px
+    style REG fill:transparent,stroke:#ec4899,stroke-width:2px
 ```
 
 ### 🧠 Core Subsystems
@@ -205,7 +209,11 @@ TG-USERBOT-PRO/
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,docker,linux,bash,git,github,githubactions,sqlite&theme=dark" alt="Tech stack icons"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,docker,linux,bash,git,github,githubactions,sqlite&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python,docker,linux,bash,git,github,githubactions,sqlite&theme=light">
+  <img src="https://skillicons.dev/icons?i=python,docker,linux,bash,git,github,githubactions,sqlite&theme=light" alt="Tech stack icons"/>
+</picture>
 
 <br/>
 
@@ -672,8 +680,8 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=9B5DE5&center=true&vCenter=true&width=500&lines=Crafted+with+%E2%9D%A4%EF%B8%8F+for+the+open-source+community;Powered+by+Telethon+%26+Python;Thanks+for+stopping+by!+%F0%9F%9A%80" alt="Footer typing" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=8B5CF6&center=true&vCenter=true&width=500&lines=Crafted+with+%E2%9D%A4%EF%B8%8F+for+the+open-source+community;Powered+by+Telethon+%26+Python;Thanks+for+stopping+by!+%F0%9F%9A%80" alt="Footer typing" />
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24,30&height=140&section=footer&animation=twinkling" width="100%" alt="Footer wave"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=140&section=footer&animation=twinkling" width="100%" alt="Footer wave"/>
 
 </div>
