@@ -1,7 +1,11 @@
 <div align="center">
 
-<!-- ═══════════════ ANIMATED HEADER ═══════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0f0c29,50:302b63,100:24243e&height=260&section=header&text=TG-USERBOT-PRO&fontSize=70&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=62&descSize=18" alt="TG-USERBOT-PRO" width="100%"/>
+<!-- ═══════════════ ANIMATED HEADER (Dark + Light theme aware) ═══════════════ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=rect&color=0:0f0c29,50:302b63,100:24243e&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=00D2FF">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=rect&color=0:e0f2fe,50:ede9fe,100:fce7f3&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=1e1b4b&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=0369a1">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:e0f2fe,50:ede9fe,100:fce7f3&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=1e1b4b&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=0369a1" alt="TG-USERBOT-PRO" width="100%"/>
+</picture>
 
 <!-- ═══════════════ TYPING ANIMATION ═══════════════ -->
 <a href="https://github.com/sumaldevservices-alt/TG-UserBot">
