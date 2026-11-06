@@ -1,18 +1,18 @@
 <div align="center">
 
-<!-- ═══════════════ ANIMATED HEADER (Dark + Light theme aware) ═══════════════ -->
+<!-- ═══════════════ HEADER (self-hosted, dark + light) ═══════════════ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=rect&color=0:0f0c29,50:302b63,100:24243e&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=00D2FF">
-  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=rect&color=0:e0f2fe,50:ede9fe,100:fce7f3&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=1e1b4b&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=0369a1">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:e0f2fe,50:ede9fe,100:fce7f3&height=240&section=header&text=TG-USERBOT-PRO&fontSize=64&fontAlignY=42&animation=twinkling&fontColor=1e1b4b&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=66&descSize=18&descColor=0369a1" alt="TG-USERBOT-PRO" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
+  <img src="assets/header-light.svg" alt="TG-USERBOT-PRO" width="100%"/>
 </picture>
 
-<!-- ═══════════════ TYPING ANIMATION ═══════════════ -->
+<!-- ═══════════════ TAGLINE ANIMATION (self-hosted) ═══════════════ -->
 <a href="https://github.com/sumaldevservices-alt/TG-UserBot">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=00D2FF&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=0369A1&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=0369A1&center=true&vCenter=true&multiline=false&width=760&height=50&lines=%E2%9A%A1+Production-Ready+Telegram+Userbot;%F0%9F%9A%80+Async+Telethon+%2B+MTProto+Core;%F0%9F%90%B3+Docker+%7C+VPS+%7C+Render+%7C+Railway+%7C+Heroku;%F0%9F%A7%A9+54%2B+Modular+Automation+Commands;%F0%9F%94%92+Zero-Config+Credential+Protection;%F0%9F%92%BB+Built+for+Developers+%26+Power+Users" alt="Typing SVG" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/tagline-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/tagline-light.svg">
+    <img src="assets/tagline-light.svg" alt="Production-Ready Telegram Userbot" width="760"/>
   </picture>
 </a>
 
@@ -36,15 +36,15 @@
 <br/><br/>
 
 <!-- ═══════════════ NAV BUTTONS ═══════════════ -->
-<a href="#-quick-start"><img src="https://img.shields.io/badge/⚡_QUICK_START-0284c7?style=for-the-badge&labelColor=0d1117" alt="Quick Start"/></a>
-<a href="#-architecture"><img src="https://img.shields.io/badge/🏛️_ARCHITECTURE-7c3aed?style=for-the-badge&labelColor=0d1117" alt="Architecture"/></a>
-<a href="#-command-catalog"><img src="https://img.shields.io/badge/📚_COMMANDS-db2777?style=for-the-badge&labelColor=0d1117" alt="Commands"/></a>
-<a href="#-deployment-matrix"><img src="https://img.shields.io/badge/🚢_DEPLOY-d97706?style=for-the-badge&labelColor=0d1117" alt="Deploy"/></a>
-<a href="#-security--responsible-use"><img src="https://img.shields.io/badge/🔐_SECURITY-059669?style=for-the-badge&labelColor=0d1117" alt="Security"/></a>
+<a href="#quick-start"><img src="https://img.shields.io/badge/⚡_QUICK_START-0284c7?style=for-the-badge&labelColor=0d1117" alt="Quick Start"/></a>
+<a href="#architecture"><img src="https://img.shields.io/badge/🏛️_ARCHITECTURE-7c3aed?style=for-the-badge&labelColor=0d1117" alt="Architecture"/></a>
+<a href="#command-catalog"><img src="https://img.shields.io/badge/📚_COMMANDS-db2777?style=for-the-badge&labelColor=0d1117" alt="Commands"/></a>
+<a href="#deployment-matrix"><img src="https://img.shields.io/badge/🚢_DEPLOY-d97706?style=for-the-badge&labelColor=0d1117" alt="Deploy"/></a>
+<a href="#security"><img src="https://img.shields.io/badge/🔐_SECURITY-059669?style=for-the-badge&labelColor=0d1117" alt="Security"/></a>
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00d2ff,50:9b5de5,100:f15bb5&height=3&section=header" width="100%"/>
+<img src="assets/divider.svg" width="100%" height="4" alt=""/>
 
 ## 📑 Table of Contents
 
@@ -52,27 +52,29 @@
 <tr>
 <td>
 
-- [✨ Key Highlights](#-key-highlights)
-- [🏛️ Architecture](#-architecture)
-- [📦 Project Structure](#-project-structure)
-- [🧰 Tech Stack](#-tech-stack)
-- [⚡ Quick Start](#-quick-start)
+- [✨ Key Highlights](#key-highlights)
+- [🏛️ Architecture](#architecture)
+- [📦 Project Structure](#project-structure)
+- [🧰 Tech Stack](#tech-stack)
+- [⚡ Quick Start](#quick-start)
 
 </td>
 <td>
 
-- [🚢 Deployment Matrix](#-deployment-matrix)
-- [📚 Command Catalog](#-command-catalog)
-- [🔐 Security & Responsible Use](#-security--responsible-use)
-- [❓ FAQ](#-faq)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+- [🚢 Deployment Matrix](#deployment-matrix)
+- [📚 Command Catalog](#command-catalog)
+- [🔐 Security & Responsible Use](#security)
+- [❓ FAQ](#faq)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
 
 </td>
 </tr>
 </table>
 
 ---
+
+<a id="key-highlights"></a>
 
 ## ✨ Key Highlights
 
@@ -118,6 +120,8 @@
 </div>
 
 ---
+
+<a id="architecture"></a>
 
 ## 🏛️ Architecture
 
@@ -173,6 +177,8 @@ flowchart TD
 
 ---
 
+<a id="project-structure"></a>
+
 ## 📦 Project Structure
 
 <details>
@@ -209,6 +215,8 @@ TG-USERBOT-PRO/
 
 ---
 
+<a id="tech-stack"></a>
+
 ## 🧰 Tech Stack
 
 <div align="center">
@@ -233,6 +241,8 @@ TG-USERBOT-PRO/
 </div>
 
 ---
+
+<a id="quick-start"></a>
 
 ## ⚡ Quick Start
 
@@ -333,6 +343,8 @@ python3 userbot.py
 | `SESSION_STRING` | ☁️ Cloud | StringSession for stateless deployments |
 
 ---
+
+<a id="deployment-matrix"></a>
 
 ## 🚢 Deployment Matrix
 
@@ -454,6 +466,8 @@ heroku ps:scale worker=1
 </details>
 
 ---
+
+<a id="command-catalog"></a>
 
 ## 📚 Command Catalog
 
@@ -587,6 +601,8 @@ heroku ps:scale worker=1
 
 ---
 
+<a id="security"></a>
+
 ## 🔐 Security & Responsible Use
 
 > [!WARNING]
@@ -600,6 +616,8 @@ heroku ps:scale worker=1
 | 🔑 | **Credential isolation** | Never commit `.env` or session files. `.gitignore` and `.dockerignore` are preconfigured, and logs are sanitized to prevent secret leakage. |
 
 ---
+
+<a id="faq"></a>
 
 ## ❓ FAQ
 
@@ -634,6 +652,8 @@ Then restart the userbot or container.
 </details>
 
 ---
+
+<a id="contributing"></a>
 
 ## 🤝 Contributing
 
@@ -674,6 +694,8 @@ git push origin feature/AmazingFeature
 
 ---
 
+<a id="license"></a>
+
 ## 📄 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
@@ -684,8 +706,8 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=8B5CF6&center=true&vCenter=true&width=500&lines=Crafted+with+%E2%9D%A4%EF%B8%8F+for+the+open-source+community;Powered+by+Telethon+%26+Python;Thanks+for+stopping+by!+%F0%9F%9A%80" alt="Footer typing" />
+<sub><b>Crafted with ❤️ for the open-source community</b> · Powered by Telethon &amp; Python · Thanks for stopping by! 🚀</sub>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=140&section=footer&animation=twinkling" width="100%" alt="Footer wave"/>
+<img src="assets/footer.svg" width="100%" alt=""/>
 
 </div>
