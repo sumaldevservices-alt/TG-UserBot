@@ -1,441 +1,540 @@
 <div align="center">
 
-# ⚡ TG-USERBOT-PRO
+<!-- ANIMATED HEADER LOGO & TYPING SVG -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,30&height=220&section=header&text=TG-USERBOT-PRO&fontSize=65&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=Next-Generation%20Asynchronous%20Telegram%20Automation%20Engine&descAlignY=62&descSize=18" alt="TG-USERBOT-PRO Header" width="100%"/>
 
-### Production-Ready, High-Performance Asynchronous Telegram Userbot
+<p align="center">
+  <a href="https://github.com/sumaldevservices-alt/TG-UserBot">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=700&lines=Production-Ready+Telegram+Userbot;Asynchronous+Telethon+MTProto+Core;Docker%2C+VPS%2C+Render%2C+Railway+%26+Heroku+Support;54%2B+Modular+Automation+Commands;Zero-Config+Credential+Protection;Built+for+Developers+%26+Power+Users" alt="Typing SVG" />
+  </a>
+</p>
 
-[![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Telethon](https://img.shields.io/badge/Telethon-v1.36+-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://github.com/LonamiWebs/Telethon)
-[![Docker Ready](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/sumaldevservices-alt/TG-UserBot/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+<!-- BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version" />
+  <img src="https://img.shields.io/badge/Telethon-v1.36+-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telethon" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Ready" />
+  <img src="https://img.shields.io/badge/License-MIT-F5A623?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License" />
+  <img src="https://img.shields.io/badge/CI%2FCD-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status" />
+</p>
 
-<br/>
+<p align="center">
+  <a href="#-table-of-contents"><strong>Explore the Docs »</strong></a>
+  <br/>
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-architecture--how-it-works">Architecture</a> •
+  <a href="#-command-catalog">Command Catalog</a> •
+  <a href="#-deployment-matrix">Deployments</a> •
+  <a href="#-security--limits">Security</a>
+</p>
 
-```
-  ████████╗ ██████╗       ██╗   ██╗███████╗███████╗██████╗ ██████╗  ██████╗ ████████╗
-  ╚══██╔══╝██╔════╝       ██║   ██║██╔════╝██╔════╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝
-     ██║   ██║  ███╗█████╗██║   ██║███████╗█████╗  ██████╔╝██████╔╝██║   ██║   ██║   
-     ██║   ██║   ██║╚════╝██║   ██║╚════██║██╔══╝  ██╔══██╗██╔══██╗██║   ██║   ██║   
-     ██║   ╚██████╔╝      ╚██████╔╝███████║███████╗██║  ██║██████╔╝╚██████╔╝   ██║   
-     ╚═╝    ╚═════╝        ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝    ╚═╝   
-```
-
-**An extensible, modular, multi-platform personal automation userbot for Telegram built with Telethon.**
-
-[Features](#-key-features) • [Installation](#-installation-guide) • [Docker](#-docker-deployment) • [VPS](#-vps-systemd-deployment) • [Cloud](#-cloud-deployment-render--railway--heroku) • [Commands](#-command-reference) • [Security](#-security--responsible-automation)
+---
 
 </div>
 
+## 📑 Table of Contents
+
+- [📑 Table of Contents](#-table-of-contents)
+- [✨ Key Highlights](#-key-highlights)
+- [🏛️ Architecture \& How It Works](#️-architecture--how-it-works)
+  - [System Flow Diagram](#system-flow-diagram)
+  - [Core Subsystems](#core-subsystems)
+- [📦 Project Directory Structure](#-project-directory-structure)
+- [⚡ Quick Start](#-quick-start)
+  - [1. Prerequisites](#1-prerequisites)
+  - [2. Get Telegram API Credentials](#2-get-telegram-api-credentials)
+  - [3. Generate StringSession (Recommended for Cloud)](#3-generate-stringsession-recommended-for-cloud)
+  - [4. Local Installation (Windows PowerShell)](#4-local-installation-windows-powershell)
+  - [5. Local Installation (Linux / macOS)](#5-local-installation-linux--macos)
+- [🚢 Deployment Matrix](#-deployment-matrix)
+  - [🐳 1. Docker \& Docker Compose](#-1-docker--docker-compose)
+  - [🖥️ 2. Linux VPS (systemd Auto-Restart Service)](#️-2-linux-vps-systemd-auto-restart-service)
+  - [☁️ 3. Render (Worker Blueprint)](#️-3-render-worker-blueprint)
+  - [🚂 4. Railway](#-4-railway)
+  - [🟣 5. Heroku / Dokku (Procfile)](#-5-heroku--dokku-procfile)
+- [📚 Command Catalog (54+ Commands)](#-command-catalog-54-commands)
+  - [👑 Administration \& Permission Management](#-administration--permission-management)
+  - [🛡️ Defense, Protection \& Anti-Delete](#️-defense-protection--anti-delete)
+  - [⚔️ Response Engine \& Raid Control](#️-response-engine--raid-control)
+  - [💣 Custom Spam Engine \& Text Storage](#-custom-spam-engine--text-storage)
+  - [🎵 Media, High-Res Audio \& Music](#-media-high-res-audio--music)
+  - [🛠️ Utility Tools, QR \& Profile Tools](#️-utility-tools-qr--profile-tools)
+- [🔐 Security \& Responsible Automation](#-security--responsible-automation)
+- [❓ Frequently Asked Questions](#-frequently-asked-questions)
+- [🤝 Contributing \& Code of Conduct](#-contributing--code-of-conduct)
+- [📄 License \& Attribution](#-license--attribution)
+
 ---
 
-## 📖 Overview
+## ✨ Key Highlights
 
-**TG-USERBOT-PRO** is an advanced open-source Telegram Userbot built on the asynchronous [Telethon](https://github.com/LonamiWebs/Telethon) framework. Designed with modularity, speed, and reliability in mind, it provides robust administration tools, group management capabilities, media converters, real-time message protection, and automated background handlers.
-
-### 🌟 Why TG-USERBOT-PRO?
-- **Zero Hardcoded Credentials**: Complete 12-factor configuration using environment variables or `.env` files.
-- **Dual Session Support**: Supports both local SQLite session files and ephemeral `StringSession` strings for cloud platforms.
-- **Resilient Engine**: Built-in automatic reconnection, graceful FloodWait backoff, and task cancellation handling.
-- **Comprehensive Deployment**: Pre-configured for Docker, Docker Compose, systemd VPS, Render, Railway, and Heroku-compatible PaaS.
-- **Safe Secrets Handling**: Credential leakage prevention in logging and public outputs.
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🔒 100% Secret Isolation</h3>
+      <p>No tokens, credentials, or sessions hardcoded in source files. Completely powered by environment variables (12-Factor App design) with startup validation and automated <code>.env</code> parsing.</p>
+    </td>
+    <td width="50%">
+      <h3>🔄 Dual-Session Architecture</h3>
+      <p>Seamlessly run with local persistent SQLite files or stateless in-memory <b>StringSessions</b> for modern ephemeral clouds like Render, Railway, and Heroku.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>🛡️ Real-Time Self-Defense</h3>
+      <p><b>Anti-Delete Protection:</b> Caches your own outgoing messages in a rolling buffer and instantly restores them if deleted by hostile chat admins.</p>
+    </td>
+    <td width="50%">
+      <h3>🎧 Studio Audio Converter</h3>
+      <p>Built-in <code>yt-dlp</code> + <code>ffmpeg</code> pipeline: extracts, converts, tags, and sends high-bitrate 320kbps MP3s or native Telegram voice notes with zero manual setup.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>⚙️ Dynamic Owner Awareness</h3>
+      <p>No hardcoded names or rigid usernames. The userbot dynamically identifies the account holder at boot time via MTProto handshake and renders clean, customized HUD menus.</p>
+    </td>
+    <td width="50%">
+      <h3>🌐 Battle-Tested Multi-Platform</h3>
+      <p>Pre-configured out of the box with Docker Compose, systemd unit templates, Render blueprints, and Railway manifests with continuous CI validation.</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🛠️ Technology Stack
+## 🏛️ Architecture & How It Works
 
-| Layer | Technology |
-|---|---|
-| **Core Runtime** | Python 3.10+ (Asynchronous `asyncio`) |
-| **Telegram MTProto Client** | [Telethon](https://github.com/LonamiWebs/Telethon) (v1.36+) |
-| **Crypto Acceleration** | `cryptg` |
-| **Media Processing** | `yt-dlp`, `ffmpeg`, `gTTS`, `qrcode`, `Pillow` |
-| **Network & HTTP** | `aiohttp`, `requests` |
-| **Containerization** | Docker, Docker Compose |
-| **Daemonization** | systemd (Linux), Render Worker, Railway |
+### System Flow Diagram
 
----
-
-## ✨ Key Features
-
+```text
+ ┌────────────────────────────────────────────────────────┐
+ │                   TELEGRAM MTProto CLOUD               │
+ └───────────────────────────┬────────────────────────────┘
+                             │
+                     [NewMessage Event]
+                             ▼
+ ┌────────────────────────────────────────────────────────┐
+ │             DISPATCHER & EVENT ROUTER                  │
+ ├───────────────────────────┬────────────────────────────┤
+ │ 1. Self-Message Check     │ 3. Group / DM Validation   │
+ │ 2. Owner & Admin Resolver │ 4. FloodWait & Rate Guards │
+ └───────────────────────────┼────────────────────────────┘
+                             │
+     ┌───────────────────────┴───────────────────────┐
+     ▼                                               ▼
+[Auto-Handler Engine]                       [Command Registry (54+)]
+  ├── Global / Local Mute Filter              ├── Admin & Mod (.mute, .lock)
+  ├── WatchSpam Rate Monitor                  ├── Protection (.antidel)
+  ├── Auto-React System (.ar)                 ├── Media / Music (.dmusic, .music)
+  ├── Anti-Delete Restorer                    ├── Tools (.tts, .qrcode, .calc)
+  └── Response Engine (.reply, .limitreply)   └── Profile (.copy, .normal)
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        TG-USERBOT-PRO ARCHITECTURE                     │
-├─────────────────────┬────────────────────┬─────────────────────────────┤
-│ 👑 Administration   │ 🛡️ Protection       │ 🎵 Media & Utility          │
-│ • Universal Targets │ • Anti-Delete Log  │ • High-Quality Music (MP3)  │
-│ • Dynamic Admin Set │ • WatchSpam Limits │ • Voice Notes (.ogg)        │
-│ • Local/Global Mute │ • Group Locks      │ • Text-to-Speech (TTS)      │
-│ • Member Kick/Throw │ • Auto-Reaction    │ • QR Code Generator         │
-│ • Batch Msg Purging │ • Profile Cloning  │ • Weather, IP & Calculator  │
-└─────────────────────┴────────────────────┴─────────────────────────────┘
-```
 
-- **👑 Admin & Group Control**: Granular multi-target resolution (reply, `@username`, or numeric ID) with local and global mute, message purge, and group lock.
-- **🛡️ Real-Time Anti-Delete**: Instant caching of your own outgoing messages to resend if maliciously deleted by chat administrators.
-- **👁️ WatchSpam Engine**: Automatically monitors opponent spam frequency and deletes rapid-fire messages surpassing configured thresholds.
-- **🎵 Media & Music Downloader**: In-memory and streaming audio extraction powered by `yt-dlp` and `ffmpeg` with 320kbps MP3 tags and Telegram voice note support.
-- **👤 Profile Replication (Clone)**: Temporarily duplicate name, bio, and avatar of any user and restore back to original state with one command.
+### Core Subsystems
+
+1. **Dispatcher Engine**:
+   - Parses the command prefix (`.`) with boundary safety (`split(maxsplit=1)`), preventing index crashes.
+   - Enforces strict hierarchy: **Account Owner** > **Delegated Admins** > **Regular Chat Members**.
+2. **WatchSpam Engine**:
+   - Real-time sliding window frequency analyzer. If any configured user sends more than $X$ messages within $Y$ seconds, their messages are automatically deleted on arrival.
+3. **Anti-Delete Buffer**:
+   - Outgoing messages are stored in an in-memory TTL dictionary (capping at 300 messages with 2-hour garbage collection). If Telegram fires a `MessageDeleted` event for your message, the bot republishes it immediately.
+4. **FastGC Title Rotation**:
+   - Adaptive background task that smoothly updates group titles with customizable emoji templates without hitting Telegram API rate limits.
 
 ---
 
-## 📂 Repository Structure
+## 📦 Project Directory Structure
 
 ```text
 TG-USERBOT-PRO/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml               # Automated CI syntax and configuration validation
+│       └── ci.yml               # Automated CI (Python 3.10-3.12 syntax & config validation)
 ├── docs/
-│   ├── INSTALLATION.md          # Step-by-step local install (Windows, Linux, macOS)
-│   ├── VPS.md                   # Ubuntu/Debian systemd daemonization guide
-│   ├── DOCKER.md                # Docker and Docker Compose instructions
-│   └── TROUBLESHOOTING.md       # Solutions to common errors and FloodWait
+│   ├── INSTALLATION.md          # Complete local setup for Windows, Linux & macOS
+│   ├── VPS.md                   # Ubuntu/Debian systemd daemon service guide
+│   ├── DOCKER.md                # Containerized Docker & Docker Compose setup
+│   └── TROUBLESHOOTING.md       # Troubleshooting 2FA, FloodWait & FFmpeg errors
 ├── scripts/
-│   ├── generate_session.py      # Telethon StringSession interactive generator
-│   └── start.sh                 # Linux / VPS startup helper script
-├── userbot.py                   # Main userbot application entry point
-├── Dockerfile                   # Multi-stage production container definition
+│   ├── generate_session.py      # Interactive StringSession generator CLI
+│   └── start.sh                 # Linux / VPS startup wrapper script
+├── userbot.py                   # Main userbot application entry point (54+ commands)
+├── Dockerfile                   # Multi-stage production container with FFmpeg
 ├── docker-compose.yml           # Production Docker Compose orchestration
-├── Procfile                     # Heroku / Dokku background worker specification
-├── render.yaml                  # Render blueprint for background worker
-├── railway.json                 # Railway deployment configuration
-├── requirements.txt             # Python project dependencies
+├── Procfile                     # Heroku / Dokku background worker declaration
+├── render.yaml                  # Render Infrastructure-as-Code Blueprint
+├── railway.json                 # Railway Cloud deployment configuration
+├── requirements.txt             # Pinned Python project dependencies
 ├── .env.example                 # Environment variables template
-├── .gitignore                   # Git ignore patterns (protects secrets/sessions)
-├── .dockerignore                # Docker build context exclusions
-├── LICENSE                      # MIT Open Source License
+├── .gitignore                   # Git exclusion rules (protects credentials & sessions)
+├── .dockerignore                # Docker build context filters
+├── LICENSE                      # Official MIT License
 └── README.md                    # Project documentation
 ```
 
 ---
 
-## ⚙️ Environment Configuration
+## ⚡ Quick Start
 
-Copy `.env.example` to `.env` and fill in your details:
+### 1. Prerequisites
+- **Python 3.10, 3.11, or 3.12** installed on your system.
+- **Git** installed.
+- **FFmpeg** installed (required for audio/music conversions).
 
-```bash
-cp .env.example .env
-```
+### 2. Get Telegram API Credentials
+1. Go to **[my.telegram.org](https://my.telegram.org)** and log in with your Telegram account.
+2. Click on **API development tools**.
+3. Create a new application (app title and short name can be anything).
+4. Save your **`API_ID`** (numeric) and **`API_HASH`** (alphanumeric string).
+5. Obtain your numeric user ID from Telegram (send `/id` to `@userinfobot` or `@MissRose_bot`).
 
-| Variable | Required | Description | Example |
-|---|:---:|---|---|
-| `API_ID` | **Yes** | Telegram API ID from [my.telegram.org](https://my.telegram.org) | `12345678` |
-| `API_HASH` | **Yes** | Telegram API Hash from [my.telegram.org](https://my.telegram.org) | `3471a69391735...` |
-| `OWNER_ID` | **Yes** | Your numeric Telegram user ID | `8420590053` |
-| `SESSION_STRING` | Optional | Telethon StringSession (Recommended for Cloud) | `1BVtsOHQ...` |
-| `SESSION_NAME` | Optional | Session file name if `SESSION_STRING` is empty | `tg_userbot_pro` |
-
-> ⚠️ **CRITICAL SECURITY NOTICE**: Never commit your `.env` file or session strings to GitHub.
-
----
-
-## 🔑 Generating a Session String
-
-For platforms without persistent disk storage (e.g. Render, Railway, Heroku), generate an authorized `StringSession`:
+### 3. Generate StringSession (Recommended for Cloud)
+If deploying on cloud platforms (Render, Railway, Heroku) or running headless:
 
 ```bash
 python scripts/generate_session.py
 ```
-
-Follow the prompts to receive your string session and assign it to `SESSION_STRING` in your environment.
+*Enter your `API_ID`, `API_HASH`, phone number, and Telegram login code to receive your secure `SESSION_STRING`.*
 
 ---
 
-## 🚀 Installation Guide
-
-### 🪟 Windows (PowerShell)
+### 4. Local Installation (Windows PowerShell)
 
 ```powershell
-# 1. Clone repository
+# 1. Clone the repository
 git clone https://github.com/sumaldevservices-alt/TG-UserBot.git
 
-# 2. Enter folder
+# 2. Enter project folder
 cd TG-UserBot
 
 # 3. Create virtual environment
 python -m venv venv
+
+# 4. Activate virtual environment
 .\venv\Scripts\Activate.ps1
 
-# 4. Install dependencies
+# 5. Install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# 5. Configure environment variables
+# 6. Configure environment variables
 Copy-Item .env.example .env
 notepad .env
+# Fill in API_ID, API_HASH, OWNER_ID (and SESSION_STRING if generated)
 
-# 6. Start the userbot
+# 7. Start the Userbot
 python userbot.py
 ```
 
-### 🐧 Ubuntu / Debian / Linux
+---
+
+### 5. Local Installation (Linux / macOS)
 
 ```bash
-# 1. Clone repository
+# 1. Clone the repository
 git clone https://github.com/sumaldevservices-alt/TG-UserBot.git
+
+# 2. Enter project directory
 cd TG-UserBot
 
-# 2. Install system packages
+# 3. Install system dependencies (Debian/Ubuntu)
 sudo apt update && sudo apt install -y python3 python3-venv python3-pip git ffmpeg
 
-# 3. Create and activate virtual environment
+# 4. Create and activate virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
-# 4. Install requirements
+# 5. Install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# 5. Configure credentials
+# 6. Configure environment variables
 cp .env.example .env
 nano .env
 
-# 6. Start userbot
+# 7. Start the Userbot
 python3 userbot.py
 ```
 
 ---
 
-## 🐳 Docker Deployment
+## 🚢 Deployment Matrix
 
-The fastest, most isolated way to run TG-USERBOT-PRO.
+Choose the hosting method that best fits your workflow:
+
+### 🐳 1. Docker & Docker Compose
+Running inside Docker guarantees consistent environments and isolates all dependencies.
 
 ```bash
-# 1. Clone and enter directory
-git clone https://github.com/sumaldevservices-alt/TG-UserBot.git
-cd TG-UserBot
-
-# 2. Create and fill .env
+# 1. Prepare configuration
 cp .env.example .env
 nano .env
 
-# 3. Build and launch with Docker Compose
+# 2. Start container in background
 docker compose up -d --build
 
-# 4. View live logs
+# 3. Inspect live logs
 docker compose logs -f userbot
 ```
-
-For complete Docker instructions and standalone `docker run` commands, see [docs/DOCKER.md](docs/DOCKER.md).
+*For detailed standalone Docker commands, see [docs/DOCKER.md](docs/DOCKER.md).*
 
 ---
 
-## 🖥️ VPS (Systemd) Deployment
+### 🖥️ 2. Linux VPS (systemd Auto-Restart Service)
+Deploy on an Ubuntu/Debian VPS to keep your bot running 24/7 with automatic restarts after reboots or crashes.
 
-To run TG-USERBOT-PRO as a background Linux service that restarts automatically after reboot or crashes:
+1. Set up code in `/home/userbot/TG-UserBot` as documented in [docs/VPS.md](docs/VPS.md).
+2. Create systemd unit `/etc/systemd/system/tg-userbot.service`:
+   ```ini
+   [Unit]
+   Description=TG-USERBOT-PRO Background Service
+   After=network.target
 
-1. Follow the setup in [docs/VPS.md](docs/VPS.md).
-2. Use the provided systemd service file:
+   [Service]
+   Type=simple
+   User=userbot
+   WorkingDirectory=/home/userbot/TG-UserBot
+   EnvironmentFile=/home/userbot/TG-UserBot/.env
+   ExecStart=/home/userbot/TG-UserBot/venv/bin/python3 /home/userbot/TG-UserBot/userbot.py
+   Restart=always
+   RestartSec=10
 
-```ini
-[Unit]
-Description=TG-USERBOT-PRO Telegram Userbot
-After=network.target
-
-[Service]
-Type=simple
-User=userbot
-WorkingDirectory=/home/userbot/TG-UserBot
-EnvironmentFile=/home/userbot/TG-UserBot/.env
-ExecStart=/home/userbot/TG-UserBot/venv/bin/python3 /home/userbot/TG-UserBot/userbot.py
-Restart=always
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-```
-
+   [Install]
+   WantedBy=multi-user.target
+   ```
 3. Enable and start:
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable --now tg-userbot
-```
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now tg-userbot
+   sudo journalctl -u tg-userbot -f
+   ```
 
 ---
 
-## ☁️ Cloud Deployment (Render / Railway / Heroku)
+### ☁️ 3. Render (Worker Blueprint)
+1. Fork or push this repository to your GitHub account.
+2. In the [Render Dashboard](https://dashboard.render.com/), click **New +** > **Blueprint**.
+3. Select your repository. Render automatically reads [`render.yaml`](render.yaml) and creates a Background Worker.
+4. Set your environment variables:
+   - `API_ID`
+   - `API_HASH`
+   - `OWNER_ID`
+   - `SESSION_STRING`
 
-### Render (Worker)
-1. Fork or push your repository.
-2. In [Render Dashboard](https://dashboard.render.com/), choose **New +** > **Blueprint**.
-3. Select your repository. Render reads [`render.yaml`](render.yaml) automatically.
-4. Set `API_ID`, `API_HASH`, `OWNER_ID`, and `SESSION_STRING` in the Environment tab.
+---
 
-### Railway
-1. In [Railway](https://railway.app/), choose **New Project** > **Deploy from GitHub repo**.
-2. Select your repository. Railway automatically builds using the [`Dockerfile`](Dockerfile) and [`railway.json`](railway.json).
-3. Add the required variables in the **Variables** tab.
+### 🚂 4. Railway
+1. In [Railway](https://railway.app/), click **New Project** > **Deploy from GitHub repo**.
+2. Select your repository.
+3. Railway automatically detects [`Dockerfile`](Dockerfile) and [`railway.json`](railway.json).
+4. Add your environment variables in the **Variables** tab.
 
-### Heroku / Dokku
-The repository includes a [`Procfile`](Procfile) declaring the process as a background worker:
+---
+
+### 🟣 5. Heroku / Dokku (Procfile)
+This repository contains a production [`Procfile`](Procfile) configured as a background worker:
 ```text
 worker: python userbot.py
 ```
-Scale worker dyno:
+Scale your worker dyno:
 ```bash
 heroku ps:scale worker=1
 ```
 
 ---
 
-## 📜 Command Reference
+## 📚 Command Catalog (54+ Commands)
 
-Default prefix: `.` (dot)
-
-<details>
-<summary><b>👑 Administration & Group Moderation</b></summary>
-
-| Command | Usage | Description |
-|---|---|---|
-| `.admins` | `.admins` | List all authorized bot admins |
-| `.addadmin` | `.addadmin @user` (or reply) | Grant admin rights to a user |
-| `.deladmin` | `.deladmin @user` (or reply) | Revoke admin rights from a user |
-| `.mute` | `.mute @user` (or reply) | Locally mute user |
-| `.unmute` | `.unmute @user` (or reply) | Locally unmute user |
-| `.gmute` | `.gmute @user` (or reply) | Globally mute user in all chats |
-| `.gunmute` | `.gunmute @user` (or reply) | Globally unmute user |
-| `.mutelist` | `.mutelist` | Display muted users and locked groups |
-| `.lock` | `.lock` | Lock group messages for non-admins |
-| `.unlock` | `.unlock` | Unlock group messages |
-| `.purge` | `.purge <count>` | Batch delete recent messages (up to 200) |
-| `.throw` | `.throw @user` (or reply) | Kick participant from group |
-| `.addbots` | `.addbots <count>` | Add bots to current group |
-
-</details>
-
-<details>
-<summary><b>🛡️ Protection & Automation</b></summary>
-
-| Command | Usage | Description |
-|---|---|---|
-| `.antidel` | `.antidel on / off` | Anti-delete safeguard for own messages |
-| `.watchspam` | `.watchspam @user <limit> <sec>` | Auto-delete target messages if sent too fast |
-| `.unwatchspam` | `.unwatchspam @user` | Remove user from WatchSpam |
-| `.watchlist` | `.watchlist` | View active WatchSpam rules in chat |
-| `.ar` | `.ar <emoji>` | Auto-react emoji on own sent messages |
-| `.sar` | `.sar` | Stop auto-reaction |
-| `.fastgc` | `.fastgc set {emoji} <template>` | Auto-rotate group title |
-
-</details>
-
-<details>
-<summary><b>⚔️ Raid & Response Engine</b></summary>
-
-| Command | Usage | Description |
-|---|---|---|
-| `.reply` | `.reply @user` (or reply) | Enable response raid on target user |
-| `.sreply` | `.sreply @user` | Stop response raid |
-| `.rr` | `.rr @user` (or reply) | Random reaction raid on target |
-| `.srr` | `.srr @user` | Stop RR raid |
-| `.flag` | `.flag @user` (or reply) | Flag raid on target |
-| `.sflag` | `.sflag @user` | Stop flag raid |
-| `.hrr` | `.hrr @user` (or reply) | Heart raid on target |
-| `.shrr` | `.shrr @user` | Stop heart raid |
-| `.replygod` | `.replygod @user` (or reply) | Multi-burst raid on target |
-| `.sgod` | `.sgod @user` | Stop god raid |
-| `.limitreply` | `.limitreply <text> <count>` | Send exact N replies to target |
-| `.slimitreply`| `.slimitreply @user` | Stop limit reply raid |
-
-</details>
-
-<details>
-<summary><b>💣 Custom Spam & Text Manager</b></summary>
-
-| Command | Usage | Description |
-|---|---|---|
-| `.spray` | `.spray <text>` | Continuous message spray |
-| `.dspray` | `.dspray` | Stop all active sprays in current chat |
-| `.addtext` | `.addtext <text>` | Save custom text to slot |
-| `.listtexts` | `.listtexts` | List all saved text slots |
-| `.tspray` | `.tspray <number>` | Spray text from specified slot |
-| `.rspray` | `.rspray` | Randomly spray from saved pool |
-| `.multispray`| `.multispray` | Sequentially rotate through saved pool |
-| `.countspray`| `.countspray <n> <text>` | Send exactly N messages and auto-stop |
-| `.spraydelay`| `.spraydelay <sec>` | Adjust delay between messages |
-| `.edittext` | `.edittext <num> <text>` | Edit saved text slot |
-| `.deltext` | `.deltext <num>` | Delete text slot |
-| `.cleartext` | `.cleartext confirm` | Clear all saved text slots |
-
-</details>
-
-<details>
-<summary><b>🛠️ Tools, Music & Profiles</b></summary>
-
-| Command | Usage | Description |
-|---|---|---|
-| `.music` | `.music <song>` | Stream song as Telegram voice note (.ogg) |
-| `.dmusic` | `.dmusic <song>` | Download high-quality MP3 (320kbps) |
-| `.tts` | `.tts <text>` | Text-to-Speech audio message |
-| `.qrcode` | `.qrcode <text>` | Generate QR Code image |
-| `.copy` | `.copy @user` (or reply) | Clone target profile (name, bio, PFP) |
-| `.normal` | `.normal` | Restore original profile information |
-| `.banner` | `.banner` (reply to photo) | Set banner image for menu |
-| `.rembanner` | `.rembanner` | Remove menu banner |
-| `.notesadd` | `.notesadd <text>` | Save note with ID |
-| `.noteslist` | `.noteslist` | View all saved notes |
-| `.notesdelete`| `.notesdelete <id>` | Delete note by ID |
-| `.calc` | `.calc <expr>` | Calculator |
-| `.weather` | `.weather <city>` | Live weather forecast |
-| `.ip` | `.ip <ip>` | IP address geolocation lookup |
-| `.short` | `.short <url>` | Shorten URL via TinyURL |
-| `.info` | `.info @user` | Inspect Telegram account details |
-| `.ping` | `.ping` | Check bot latency |
-| `.status` | `.status` | View bot uptime and stats |
-
-</details>
+> **Command Prefix**: `.` (dot)  
+> All commands can target users via **replying to their message**, specifying their **`@username`**, or providing their **numeric ID**.
 
 ---
 
-## 🔒 Security & Responsible Automation
+### 👑 Administration & Permission Management
 
-1. **Intended Usage**: This software is intended for personal account automation, productivity, and administration of chats where you possess legitimate authority.
-2. **Telegram Terms of Service**: Always respect [Telegram's Terms of Service](https://telegram.org/tos) and API limits. Excessive spamming can trigger account limitations (`SpamBlock`).
-3. **FloodWait Compliance**: The application automatically catches `FloodWaitError` and sleeps for the required interval.
-4. **Credential Safety**:
-   - Never paste API IDs, Hashes, or Session strings in public chats.
-   - All sensitive data is isolated inside `.env`.
-   - Logging avoids exposing tokens or authentication secrets.
+| Command | Syntax | Description | Scope |
+|---|---|---|:---:|
+| `.menu` | `.menu` | Interactive paginated Userbot HUD | Global |
+| `.menu1` - `.menu5` | `.menu1` | Quick jumps to specific category pages | Global |
+| `.cmds` | `.cmds` | Complete listing of all 54+ commands | Global |
+| `.admins` | `.admins` | List all delegated bot administrators | Owner Only |
+| `.addadmin` | `.addadmin @user` | Grant admin access to control the bot | Owner Only |
+| `.deladmin` | `.deladmin @user` | Revoke delegated bot admin access | Owner Only |
+| `.mute` | `.mute @user` | Locally auto-delete user's incoming messages | Admin |
+| `.unmute` | `.unmute @user` | Remove local mute on user | Admin |
+| `.gmute` | `.gmute @user` | Globally delete user's messages in all chats | Admin |
+| `.gunmute` | `.gunmute @user` | Remove global mute | Admin |
+| `.mutelist` | `.mutelist` | Display local/global mute & lock panels | Admin |
+| `.lock` | `.lock` | Lock group (auto-delete non-admin messages) | Group Only |
+| `.unlock` | `.unlock` | Unlock group messaging for all participants | Group Only |
+| `.purge` | `.purge <count>` | Batch delete recent chat messages (1–200) | Group Only |
+| `.throw` | `.throw @user` | Kick a member from current group | Group Only |
+| `.addbots` | `.addbots <count>` | Batch invite bot assistants into group | Group Only |
+
+---
+
+### 🛡️ Defense, Protection & Anti-Delete
+
+| Command | Syntax | Description |
+|---|---|---|
+| `.antidel` | `.antidel on / off` | Real-time buffer: immediately restores your deleted messages |
+| `.watchspam` | `.watchspam @user <limit> <sec>` | Auto-delete target messages exceeding rate limit (e.g. `3 5`) |
+| `.unwatchspam`| `.unwatchspam @user` | Remove WatchSpam restrictions from target |
+| `.watchlist` | `.watchlist` | View all active WatchSpam rules in current chat |
+| `.ar` | `.ar <emoji>` | Automatically add emoji reaction to your outgoing messages |
+| `.sar` | `.sar` | Stop active auto-reaction |
+| `.fastgc` | `.fastgc set {emoji} <template>` | Live dynamic group title animator |
+
+---
+
+### ⚔️ Response Engine & Raid Control
+
+| Command | Syntax | Description |
+|---|---|---|
+| `.reply` | `.reply @user` | Start automatic reply raid on target |
+| `.sreply` | `.sreply [@user]` | Stop active reply raid (specific user or all) |
+| `.rr` | `.rr @user` | Start Reaction + Fun response raid |
+| `.srr` | `.srr [@user]` | Stop reaction raid |
+| `.flag` | `.flag @user` | Flag wave response raid |
+| `.sflag` | `.sflag [@user]` | Stop flag wave raid |
+| `.hrr` | `.hrr @user` | Heart-burst response raid |
+| `.shrr` | `.shrr [@user]` | Stop heart raid |
+| `.replygod` | `.replygod @user` | High-frequency multi-burst response |
+| `.sgod` | `.sgod [@user]` | Stop god raid |
+| `.limitreply` | `.limitreply <text> <count>` | Send exact $N$ automated replies to target (alias: `.replymansuri`) |
+| `.slimitreply`| `.slimitreply [@user]` | Stop limited count raid (alias: `.smansuri`, `.sstop`) |
+
+---
+
+### 💣 Custom Spam Engine & Text Storage
+
+| Command | Syntax | Description |
+|---|---|---|
+| `.spray` | `.spray <text>` | Non-stop continuous message spam |
+| `.dspray` | `.dspray` | Immediately abort any active spam in chat |
+| `.addtext` | `.addtext <text>` | Store a message template into slot index |
+| `.listtexts` | `.listtexts` | Display all saved message templates |
+| `.edittext` | `.edittext <id> <new>` | Update an existing message template |
+| `.deltext` | `.deltext <id>` | Delete specified message template |
+| `.cleartext` | `.cleartext confirm` | Delete all stored text templates |
+| `.tspray` | `.tspray <id>` | Spray message template from slot index |
+| `.rspray` | `.rspray` | Randomly spray templates from your pool |
+| `.multispray`| `.multispray` | Sequentially cycle templates from your pool |
+| `.countspray`| `.countspray <n> <text>` | Send exactly $N$ messages and terminate |
+| `.spraydelay`| `.spraydelay <seconds>` | Configure interval delay between messages (0.1s - 60s) |
+
+---
+
+### 🎵 Media, High-Res Audio & Music
+
+| Command | Syntax | Description |
+|---|---|---|
+| `.music` | `.music <song name>` | Search YouTube, download audio, and stream as Telegram voice note (`.ogg`) |
+| `.dmusic` | `.dmusic <song name>` | Download audio and send as 320kbps MP3 audio file with metadata tags |
+
+---
+
+### 🛠️ Utility Tools, QR & Profile Tools
+
+| Command | Syntax | Description |
+|---|---|---|
+| `.copy` | `.copy @user` | Clone target profile (First Name, Last Name, Bio, and Avatar) |
+| `.normal` | `.normal` | Restore your original profile, bio, and avatar |
+| `.banner` | `.banner` (reply to photo) | Set custom graphic banner for your `.menu` |
+| `.rembanner` | `.rembanner` | Remove custom menu banner |
+| `.tts` | `.tts <text>` | Convert text to speech audio note |
+| `.qrcode` | `.qrcode <text>` | Generate scannable QR Code PNG |
+| `.fancy` | `.fancy <text>` | Generate styled decorative font text |
+| `.style` | `.style <text>` | Convert text into script font |
+| `.emoji` | `.emoji <text>` | Add decorative emoji flair to text |
+| `.calc` | `.calc <math>` | Safe arithmetic calculator |
+| `.weather` | `.weather <city>` | Live weather forecast report |
+| `.ip` | `.ip <ip address>` | Geolocation lookup of IP address |
+| `.short` | `.short <url>` | Create shortened URL link via TinyURL |
+| `.info` | `.info @user` | Inspect detailed Telegram user profile |
+| `.notesadd` | `.notesadd <text>` | Save persistent note |
+| `.noteslist` | `.noteslist` | View all saved persistent notes |
+| `.notesdelete`| `.notesdelete <id>`| Delete persistent note by ID |
+| `.ping` | `.ping` | Calculate server latency to Telegram MTProto |
+| `.status` | `.status` | Display bot uptime, admin count, and operational state |
+| `.flip` | `.flip` | Flip a virtual coin (Heads/Tails) |
+| `.dice` | `.dice` | Roll virtual 6-sided dice |
+
+---
+
+## 🔐 Security & Responsible Automation
+
+1. **Authorized Personal Use**: This userbot is designed for personal account management, productivity, and chat administration.
+2. **Adherence to Platform Rules**: Always adhere to [Telegram's Terms of Service](https://telegram.org/tos). Avoid using automated features to harass users or violate chat guidelines.
+3. **FloodWait Protection**: All automated endpoints incorporate automatic backoff upon encountering Telegram `FloodWaitError` exceptions.
+4. **Credential Isolation**:
+   - Never commit `.env` or session files to GitHub.
+   - The `.gitignore` and `.dockerignore` files are pre-configured to block sensitive files.
+   - Logging outputs are sanitized to prevent secret leakage.
 
 ---
 
 ## ❓ Frequently Asked Questions
 
 <details>
-<summary><b>Is running a Userbot against Telegram rules?</b></summary>
-Telegram allows custom MTProto clients through their open API. However, abusing the API for unsolicited messaging or spam can result in account bans. Use responsibly.
+<summary><b>Can I deploy this without keeping my computer turned on?</b></summary>
+Yes! You can host the bot on an inexpensive Ubuntu/Debian VPS (see <a href="docs/VPS.md">docs/VPS.md</a>) or on cloud platforms like Render, Railway, or Docker.
 </details>
 
 <details>
-<summary><b>Can I change the command prefix from dot (.) to something else?</b></summary>
-Yes! The prefix is handled in the message dispatcher in `userbot.py` and can be customized.
+<summary><b>What is the difference between a bot token and a userbot?</b></summary>
+A Telegram Bot runs under the <code>@BotFather</code> framework and has restricted permissions. A <b>Userbot</b> runs directly on your personal MTProto account, allowing it to manage your chats, messages, and automation natively.
 </details>
 
 <details>
-<summary><b>Why do I get an error when downloading music?</b></summary>
-Ensure <code>ffmpeg</code> is installed on your operating system or use Docker where it is pre-packaged.
+<summary><b>Why do music commands fail on YouTube tracks?</b></summary>
+Make sure <code>ffmpeg</code> is installed on your system. If deploying via Docker, <code>ffmpeg</code> is pre-installed automatically.
+</details>
+
+<details>
+<summary><b>How do I update the bot to the latest code?</b></summary>
+Simply run:
+<pre><code>git pull origin main
+pip install -r requirements.txt --upgrade
+</code></pre>
+Then restart the userbot or container.
 </details>
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing & Code of Conduct
 
-Contributions, bug reports, and improvements are welcome!
+Contributions, feature requests, and bug fixes are welcome!
 
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
+1. Fork the Repository.
+2. Create your Feature Branch:
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your Changes:
+   ```bash
+   git commit -m 'Add AmazingFeature'
+   ```
+4. Push to the Branch:
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
 5. Open a Pull Request.
 
 ---
 
-## 📄 License
+## 📄 License & Attribution
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for complete details.
 
----
+* **Repository**: [https://github.com/sumaldevservices-alt/TG-UserBot.git](https://github.com/sumaldevservices-alt/TG-UserBot.git)
 
-## 🔗 Official Repository Link
+<div align="center">
 
-- **Git Repository**: [https://github.com/sumaldevservices-alt/TG-UserBot.git](https://github.com/sumaldevservices-alt/TG-UserBot.git)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,30&height=120&section=footer" alt="Footer Wave" width="100%"/>
+
+<sub>Crafted with ❤️ for the open-source community • Powered by Telethon & Python</sub>
+
+</div>
